@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="apple-touch-icon.png" type="image/x-icon">
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+  <main>
+    <section class="cards-section">
+      <div class="weather-time-container">
+        <div class="upper-div">
+          <div class="upper-div-content1">
+            <h3></h3>
+            <h1></h1>
+          </div>
+          <div class="upper-div-content2">
+            <h2>20</h2>
+          </div>
+        </div>
+
+        <div class="lower-div">
+          <div class="lower-div-content1">
+            <input type="text" value="Bhopal" id="weather-city-name">
+          </div>
+          <div class="lower-div-content2">
+            <h1 id="value-box1">precipitation:35%</h1>
+            <h1 id="value-box2"></h1>
+            <h1 id="value-box3"></h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-section-container">
+        <div class="cards todo" id="0">
+        <img src="https://i.pinimg.com/736x/77/25/26/7725264c4cbd1b566063052a7bf058ab.jpg" alt="">
+        <h1>To do list</h1>
+      </div>
+      <div class="cards daily-planner" id="1">
+        <img src="https://i.pinimg.com/736x/ae/68/ec/ae68ecdad95290bf9f977720e503f4b0.jpg" alt="">
+        <h1>
+          Daily planner
+        </h1>
+      </div>
+      <div class="cards motivation"  id="2">
+        <img src="https://i.pinimg.com/736x/01/2b/95/012b950f78f64298c30504218918f19f.jpg" alt="">
+        <h1>Motivation</h1>
+      </div>
+      <div class="cards pomodoro" id="3">
+        <img src="https://i.pinimg.com/1200x/a1/2e/26/a12e264196a60d6364b594b9fcf65c3d.jpg" alt="">
+        <h1>pomodoro timer</h1>
+      </div>
+      <div class="cards goals" id="4">
+        <img src="https://i.pinimg.com/originals/0e/69/d7/0e69d735761227d21fd08e7fd6a704da.png" alt="">
+        <h1>daily goals</h1>
+      </div>
+      </div>
+    </section>
+
+    <!-- another page:  -->
+    <section class="fullElem todo-list-fullpage">
+      <button class="btn"  id="0">close</button>
+      <h2>Your personalized task list</h2>
+      <div class="task-container">
+
+        <div class="addTask">
+          <form>
+            <input type="text" placeholder="Enter Task: " id="task-enter">
+            <textarea name="" id="" placeholder="Enter Details: " rows="8"></textarea>
+            <div class="imp-task">
+              <input type="checkbox" name="" id="checkbox">
+              <label for="checkbox">Mark as important</label>
+            </div>
+            <button id="add-button" type="button" class="inner-button">Add Task</button>
+          </form>
+        </div>
+
+        <div class="allTask">
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="fullElem daily-planner-fullpage">
+      <button class="btn" id="1">close</button>
+      <h2>Plan your day to be more productive</h2>
+
+      <div class="daily-planner-container">
+        <div class="planner-elems">
+          <h3>6:00 - 7:00</h3>
+          <input type="text" placeholder=".." id="key0">
+        </div>
+        <div class="planner-elems">
+          <h3>7:00 - 8:00</h3>
+          <input type="text" placeholder=".." id="key1">
+        </div>
+        <div class="planner-elems">
+          <h3>8:00 - 9:00</h3>
+          <input type="text" placeholder=".." id="key2">
+        </div>
+        <div class="planner-elems">
+          <h3>9:00 - 10:00</h3>
+          <input type="text" placeholder=".." id="key3">
+        </div>
+        <div class="planner-elems">
+          <h3>10:00 - 11:00</h3>
+          <input type="text" placeholder=".." id="key4">
+        </div>
+        <div class="planner-elems">
+          <h3>11:00 - 12:00</h3>
+          <input type="text" placeholder=".." id="key5">
+        </div>
+        <div class="planner-elems">
+          <h3>12:00 - 13:00</h3>
+          <input type="text" placeholder=".." id="key6">
+        </div>
+        <div class="planner-elems">
+          <h3>13:00 - 14:00</h3>
+          <input type="text" placeholder=".." id="key7">
+        </div>
+        <div class="planner-elems">
+          <h3>14:00 - 15:00</h3>
+          <input type="text" placeholder=".." id="key8">
+        </div>
+        <div class="planner-elems">
+          <h3>15:00 - 16:00</h3>
+          <input type="text" placeholder=".." id="key9">
+        </div>
+        <div class="planner-elems">
+          <h3>16:00 - 17:00</h3>
+          <input type="text" placeholder=".." id="key10">
+        </div>
+        <div class="planner-elems">
+          <h3>17:00 - 18:00</h3>
+          <input type="text" placeholder=".." id="key11">
+        </div>
+        <div class="planner-elems">
+          <h3>18:00 - 19:00</h3>
+          <input type="text" placeholder=".." id="key12">
+        </div>
+        <div class="planner-elems">
+          <h3>19:00 - 20:00</h3>
+          <input type="text" placeholder=".." id="key13">
+        </div>
+        <div class="planner-elems">
+          <h3>20:00 - 21:00</h3>
+          <input type="text" placeholder=".." id="key14">
+        </div>
+        <div class="planner-elems">
+          <h3>21:00 - 22:00</h3>
+          <input type="text" placeholder=".." id="key15">
+        </div>
+        <div class="planner-elems">
+          <h3>22:00 - 23:00</h3>
+          <input type="text" placeholder=".." id="key16">
+        </div>
+        <div class="planner-elems">
+          <h3>23:00 - 00:00</h3>
+          <input type="text" placeholder=".." id="key17">
+        </div>
+      </div>
+    </section>
+    <section class="fullElem motivational-fullpage">
+      <button class="btn" id="2">close</button>
+      <h1>motivational quote</h1>
+
+      <div class="motivational-quote-container">
+        <i class="ri-double-quotes-r"></i>
+        <div class="day">Quote of the day: </div>
+        <div class="quote"></div>
+        <div class="author"><span></span></div>
+      </div>
+    </section>
+    <section class="fullElem pomodoro-timer-fullpage">
+      <button class="btn" id="3">close</button>
+      <h1>Stay focused!</h1>
+
+      <h4 class="workSection">work session</h4>
+
+      <div class="timer-container">
+        <div class="timeElem">25:00</div>
+        <div class="buttons-container">
+          <button class="time-buttons" id="start-timer-button">Start</button>
+          <button class="time-buttons" id="pause-timer-button">Pause</button>
+          <button class="time-buttons" id="reset-timer-button">Reset</button>
+        </div>
+      </div>
+    </section>
+    <section class="fullElem daily-goals-fullpage">
+      <button class="btn" id="4">close</button>
+      <h1>daily goals</h1>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

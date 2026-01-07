@@ -1,0 +1,496 @@
+:root {
+  --pri:#FCDEC0;
+  --sec:#4e1f00;
+  --tri1:#feba17;
+  --tr2:#74512d;
+}
+
+@font-face {
+  font-family: light;
+  src: url(./fonnts.com-Aeonik-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--sec);
+  color: wheat;
+  font-family: light;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+}
+main .cards-section {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+main .cards-section .weather-time-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 30px;
+  padding: 10px 2rem;
+  color: white;
+  background-image: url("https://images.unsplash.com/photo-1683041132892-0fe990b3afc3?q=80&w=1291&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center bottom;
+}
+main .cards-section .weather-time-container .upper-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+  width: 100%;
+  height: 50%;
+}
+main .cards-section .weather-time-container .upper-div .upper-div-content1 h3 {
+  font-size: 30px;
+  font-weight: 100;
+}
+main .cards-section .weather-time-container .upper-div .upper-div-content1 h1 {
+  font-size: 60px;
+  margin-left: 8px;
+}
+main .cards-section .weather-time-container .upper-div .upper-div-content2 h2 {
+  font-size: 60px;
+}
+main .cards-section .weather-time-container .lower-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+  width: 100%;
+  height: 50%;
+}
+main .cards-section .weather-time-container .lower-div .lower-div-content1 input {
+  font-size: 40px;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+main .cards-section .weather-time-container .lower-div .lower-div-content2 {
+  font-size: 9px;
+}
+main .cards-section .cards-section-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 30px;
+  padding: 1rem;
+}
+main .cards-section .cards-section-container .cards {
+  width: 270px;
+  height: 350px;
+  background-color: var(--tri1);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  text-transform: capitalize;
+  transition: all ease 0.2s;
+  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.3);
+}
+main .cards-section .cards-section-container .cards h1 {
+  position: absolute;
+  z-index: 1;
+  bottom: 5px;
+  right: 5px;
+}
+main .cards-section .cards-section-container .cards img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .cards-section .cards-section-container .cards:active {
+  scale: 0.97;
+}
+main .cards-section .cards-section-container .todo {
+  color: yellow;
+}
+main .cards-section .cards-section-container .daily-planner {
+  color: var(--sec);
+}
+main .fullElem {
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+  position: relative;
+}
+main .fullElem .btn {
+  position: absolute;
+  right: 4%;
+  background-color: red;
+  border: none;
+  font-size: 25px;
+  padding: 10px 15px;
+  top: 2rem;
+  border-radius: 10px;
+  color: white;
+  transition: all ease 0.2s;
+}
+main .fullElem .btn:active {
+  scale: 0.97;
+}
+main .todo-list-fullpage {
+  padding-left: 10px;
+  padding: 2rem;
+  width: 100%;
+  height: 100vh;
+}
+main .todo-list-fullpage h2 {
+  margin-top: 5px;
+  font-size: 2rem;
+}
+main .todo-list-fullpage .task-container {
+  margin-top: 1rem;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+}
+main .todo-list-fullpage .task-container .addTask {
+  width: 33%;
+  height: 100%;
+  background-color: var(--tr2);
+  border-radius: 15px;
+}
+main .todo-list-fullpage .task-container .addTask form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0px;
+  padding: 10px;
+}
+main .todo-list-fullpage .task-container .addTask form div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+main .todo-list-fullpage .task-container .addTask form div input {
+  scale: 2;
+}
+main .todo-list-fullpage .task-container .addTask form div label {
+  font-size: 20px;
+}
+main .todo-list-fullpage .task-container .addTask form #task-enter {
+  border-radius: 5px;
+  padding: 15px 20px;
+  background-color: var(--pri);
+  font-size: 28px;
+  margin-bottom: 20px;
+  outline: none;
+  font-weight: 400;
+  width: 100%;
+  border: none;
+  color: var(--sec);
+}
+main .todo-list-fullpage .task-container .addTask form textarea {
+  border-radius: 5px;
+  padding: 15px 20px;
+  background-color: var(--pri);
+  font-size: 28px;
+  margin-bottom: 20px;
+  outline: none;
+  font-weight: 400;
+  width: 100%;
+  border: none;
+  color: var(--sec);
+}
+main .todo-list-fullpage .task-container .addTask form button {
+  border-radius: 5px;
+  padding: 15px 20px;
+  background-color: var(--tri1);
+  font-size: 28px;
+  margin-bottom: 20px;
+  outline: none;
+  font-weight: 600;
+  width: 100%;
+  border: none;
+  color: var(--sec);
+  transition: all ease 0.2s;
+}
+main .todo-list-fullpage .task-container .addTask form button:active {
+  scale: 0.97;
+}
+main .todo-list-fullpage .task-container .allTask {
+  width: 65%;
+  height: 100%;
+  background-color: var(--tr2);
+  border-radius: 15px;
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+main .todo-list-fullpage .task-container .allTask .task {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 10px;
+  background-color: var(--pri);
+  color: #4e1f00;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+}
+main .todo-list-fullpage .task-container .allTask .task h2 {
+  font-size: 30px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 1px;
+}
+main .todo-list-fullpage .task-container .allTask .task h2 span {
+  background-color: red;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 10px;
+  color: var(--pri);
+}
+main .todo-list-fullpage .task-container .allTask .task h2 span.true {
+  opacity: 1;
+}
+main .todo-list-fullpage .task-container .allTask .task h2 span.false {
+  opacity: 0;
+}
+main .todo-list-fullpage .task-container .allTask .task .task-done {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all ease 0.2s;
+  white-space: nowrap;
+}
+main .todo-list-fullpage .task-container .allTask .task .task-delete {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all ease 0.2s;
+}
+main .todo-list-fullpage .task-container .allTask .task .task-done:active,
+main .todo-list-fullpage .task-container .allTask .task .task-delete:active {
+  scale: 0.97;
+}
+main .todo-list-fullpage .task-container .allTask::-webkit-scrollbar {
+  display: none;
+}
+main .daily-planner-fullpage {
+  padding: 2rem;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+}
+main .daily-planner-fullpage h2 {
+  font-size: 50px;
+  color: white;
+}
+main .daily-planner-fullpage .daily-planner-container {
+  border: 2px solid var(--tri1);
+  margin-top: 30px;
+  width: 100%;
+  height: 80%;
+  background-color: var(--tr2);
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow: auto;
+}
+main .daily-planner-fullpage .daily-planner-container .planner-elems {
+  border: 2px solid rgb(148, 148, 148);
+  width: 48%;
+  background-color: var(--sec);
+  padding: 5px 10px;
+  border-radius: 5px;
+  flex-grow: 1;
+  max-width: 49%;
+}
+main .daily-planner-fullpage .daily-planner-container .planner-elems h3 {
+  font-size: 10px;
+}
+main .daily-planner-fullpage .daily-planner-container .planner-elems input {
+  margin-top: 5px;
+  font-size: 25px;
+  width: 90%;
+  background-color: var(--sec);
+  outline: none;
+  border: none;
+  color: var(--pri);
+  margin-left: 20px;
+}
+main .daily-planner-fullpage .daily-planner-container::-webkit-scrollbar {
+  display: none;
+}
+main .motivational-fullpage {
+  height: 100vh;
+  width: 100%;
+  padding: 1.5rem;
+}
+main .motivational-fullpage h1 {
+  text-transform: capitalize;
+  font-size: 50px;
+  color: white;
+}
+main .motivational-fullpage .motivational-quote-container {
+  position: relative;
+  top: 20%;
+  left: 25%;
+  padding: 1rem;
+  width: 50%;
+  height: 50%;
+  background-color: var(--tri1);
+  border-radius: 30px;
+  overflow: hidden;
+  border: 5px solid var(--tr2);
+  box-shadow: 0 0 700px var(--tri1);
+  position: relative;
+}
+main .motivational-fullpage .motivational-quote-container i {
+  position: absolute;
+  color: black;
+  font-size: 90px;
+  right: 10px;
+  top: -1px;
+  opacity: 0.3;
+}
+main .motivational-fullpage .motivational-quote-container .day {
+  width: 40%;
+  height: 60px;
+  background-color: var(--tr2);
+  padding: 1rem;
+  font-size: 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+main .motivational-fullpage .motivational-quote-container .quote {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 30px;
+  color: black;
+  padding: 5px 0.8rem;
+  font-weight: 900;
+}
+main .motivational-fullpage .motivational-quote-container .author {
+  width: 45%;
+  height: 60px;
+  font-size: 25px;
+  font-weight: 100;
+  text-align: end;
+  padding: 0.7rem;
+  position: relative;
+  right: -55%;
+  border-radius: 20px;
+  color: white;
+  background-color: var(--tr2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+}
+main .pomodoro-timer-fullpage {
+  height: 100vh;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: transparent;
+  background-image: url(https://i.pinimg.com/1200x/ab/71/08/ab7108b1b06dbaf43a73a1882da46ead.jpg);
+  background-size: cover;
+  background-position: center;
+}
+main .pomodoro-timer-fullpage h1 {
+  text-transform: capitalize;
+  font-size: 50px;
+  color: white;
+}
+main .pomodoro-timer-fullpage h4 {
+  font-size: 60px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-transform: capitalize;
+  background-color: rgba(255, 255, 255, 0);
+  font-weight: 100;
+  padding: 10px;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  border-radius: 20px;
+  border: 3px solid gray;
+}
+main .pomodoro-timer-fullpage .timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+  height: 400px;
+  border-radius: 30px;
+  position: relative;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+main .pomodoro-timer-fullpage .timer-container .timeElem {
+  font-size: 100px;
+  color: white;
+}
+main .pomodoro-timer-fullpage .timer-container .time-buttons {
+  padding: 0.5rem;
+  font-size: 30px;
+  border-radius: 10px;
+  border: 2px solid rgb(255, 81, 0);
+  transition: all ease 0.2s;
+  color: white;
+  background-color: rgba(255, 215, 0, 0.6);
+}
+main .pomodoro-timer-fullpage .timer-container .time-buttons:active {
+  scale: 0.97;
+}/*# sourceMappingURL=style.css.map */

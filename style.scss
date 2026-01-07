@@ -1,0 +1,465 @@
+:root{
+  --pri:#FCDEC0;
+  --sec:#4e1f00;
+  --tri1:#feba17;
+  --tr2:#74512d;
+}
+
+@font-face{
+  font-family: light;
+  src:url(./fonnts.com-Aeonik-Regular.ttf);
+}
+
+@mixin display($align,$justify,$direction,$gap){
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin size($width,$height){
+  width: $width;
+  height: $height;
+}
+
+@mixin task-buttons($bgColor){
+  background-color: $bgColor;
+  color: white;
+  border:none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+@mixin addTask($bgColor,$font-weight){
+  border-radius: 5px;
+  padding: 15px 20px;
+  background-color: $bgColor;
+  font-size: 28px;
+  margin-bottom: 20px;
+  outline: none;
+  font-weight: $font-weight;
+  width: 100%;
+  border: none;
+  color: var(--sec);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100%;
+}
+
+main{
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--sec);
+  color: wheat;
+  font-family: light;
+  @include display(center, flex-start,column ,1rem );
+  overflow: hidden;
+
+  .cards-section{
+    min-height: 100vh;
+    padding: 2rem;
+    @include display(flex-start,flex-start ,column , 10px);
+    flex-wrap: wrap;
+
+    .weather-time-container{
+      @include size(100%,300px );
+      border-radius: 30px;
+      padding: 10px 2rem;
+      color: white;
+      background-image: url('https://images.unsplash.com/photo-1683041132892-0fe990b3afc3?q=80&w=1291&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center bottom;
+
+      .upper-div{
+        @include display(center,space-between ,row ,0px );
+        @include size(100%,50% );
+
+        .upper-div-content1{
+          h3{
+            font-size: 30px;
+            font-weight: 100;
+          }
+          h1{
+            font-size: 60px;
+            margin-left: 8px;
+          }
+        }
+        
+        .upper-div-content2{
+          h2{
+            font-size: 60px;
+          }
+        }
+      }
+      .lower-div{
+        @include display(center,space-between ,row ,0px );
+        @include size(100%,50% );
+
+        .lower-div-content1{
+          input{
+            font-size: 40px;
+            outline: none;
+            background-color: transparent;
+            color: white;
+            border: none;
+          }
+        }
+        .lower-div-content2{
+          font-size: 9px;
+        }
+      }
+    }
+
+    .cards-section-container{
+      @include display(center,space-evenly,row ,30px );
+      padding: 1rem;
+
+      .cards{
+      @include size(270px,350px );
+      background-color: var(--tri1);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      text-transform: capitalize;
+      transition: all ease 0.2s;
+      box-shadow: 5px 10px 30px rgba(0,0,0,0.3);
+
+      h1{
+        position: absolute;
+        z-index: 1;
+        bottom: 5px;
+        right: 5px;
+      }
+      img{
+        @include size(100%, 100%);
+        object-fit: cover;
+      }
+    }
+    .cards:active{
+      scale:0.97;
+    }
+    .todo{
+      color: yellow;
+    }
+    .daily-planner{
+      color: var(--sec);
+    }
+
+    }
+  }
+
+  .fullElem{
+    @include size(100% ,100% );
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    position: relative;
+
+    .btn{
+      position: absolute;
+      right: 4%;
+      background-color: red;
+      border: none;
+      font-size: 25px;
+      padding: 10px 15px;
+      top: 2rem;
+      border-radius: 10px;
+      color: white;
+      transition: all ease 0.2s;
+    }
+    .btn:active{
+      scale: 0.97;
+    }
+  }
+
+  .todo-list-fullpage{
+    padding-left: 10px;
+    padding: 2rem;
+    @include size(100%,100vh);
+
+    h2{
+      margin-top: 5px;
+      font-size: 2rem;
+    }
+    .task-container{
+      margin-top: 1rem;
+      @include size(100%,75%);
+      @include display(center,space-between ,row , 0px);
+
+      .addTask{
+        @include size(33%, 100%);
+        background-color: var(--tr2);
+        border-radius: 15px;
+
+        form{
+          @include display(center,flex-start ,column ,0px );
+          padding: 10px;
+
+          div{
+            @include display(center ,flex-start ,row ,15px );
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+
+            input{
+              scale: 2;
+            }
+            label{
+              font-size: 20px;
+            }
+          }
+
+          #task-enter{
+            @include addTask(var(--pri), 400);
+          }
+          textarea{
+            @include addTask(var(--pri), 400);
+          }
+          button{
+            @include addTask(var(--tri1),600);
+            transition: all ease 0.2s;
+          }
+          button:active{
+            scale: 0.97;
+          }
+        }
+      }
+      .allTask{
+        @include size(65%,100% );
+        background-color:var(--tr2);
+        border-radius: 15px;
+        padding: 10px;
+        overflow: auto;
+        @include display(center,flex-start ,column ,10px );
+
+        .task{
+          @include display(flex-start,space-between ,row ,10px );
+          background-color: var(--pri);
+          color: #4e1f00;
+          padding: 15px;
+          border-radius: 10px;
+          width: 100%;
+          h2{
+            font-size: 30px;
+            width: 80%;
+            @include display(center,flex-start ,row ,1px );
+
+            span{
+              background-color: red;
+              padding: 3px;
+              border-radius: 5px;
+              font-size: 10px;
+              color: var(--pri)
+            }
+            span.true{
+              opacity: 1;
+            }
+            span.false{
+              opacity: 0;
+            }
+          }
+          .task-done{
+            @include task-buttons(green);
+            transition: all ease 0.2s;
+            white-space: nowrap;
+          }
+          .task-delete{
+            @include task-buttons(red);
+            transition: all ease 0.2s;
+          }
+          .task-done:active,
+          .task-delete:active{
+            scale: 0.97;
+          }
+
+        }
+      }
+      .allTask::-webkit-scrollbar{
+        display: none;
+      }
+    }
+  }
+  .daily-planner-fullpage{
+    padding: 2rem;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    h2{
+      font-size: 50px;
+      color:white;
+    }
+
+    
+    .daily-planner-container{
+      border: 2px solid var(--tri1);
+      margin-top: 30px;
+      @include size(100%,80% );
+      background-color: var(--tr2);
+      padding: 1rem;
+      border-radius: 10px;
+      @include display(flex-start,flex-start,row ,10px );
+      flex-wrap: wrap;
+      align-content: flex-start;
+      overflow: auto;
+
+      .planner-elems{
+        border: 2px solid rgb(148, 148, 148);
+        width: 48%;
+        background-color: var(--sec);
+        padding: 5px 10px;
+        border-radius: 5px;
+        flex-grow: 1;
+        max-width: 49%;
+
+        h3{
+          font-size: 10px;
+        }
+        input{
+          margin-top: 5px;
+          font-size: 25px;
+          width: 90%;
+          background-color: var(--sec);
+          outline: none;
+          border: none;
+          color: var(--pri);
+          margin-left: 20px;
+        }
+      }
+    }
+        .daily-planner-container::-webkit-scrollbar{
+          display: none;
+        }
+  }
+  .motivational-fullpage{
+    height: 100vh;
+    width: 100%;
+    padding: 1.5rem;
+    h1{
+      text-transform: capitalize;
+      font-size: 50px;
+      color:white;
+    }
+    .motivational-quote-container{
+      position: relative;
+      top: 20%;
+      left: 25%;
+      padding: 1rem;
+      @include size(50%, 50%);
+      background-color: var(--tri1);
+      border-radius: 30px;
+      overflow: hidden;
+      border: 5px solid var(--tr2);
+      box-shadow: 0 0 700px var(--tri1);
+      position: relative;
+
+      i{
+        position: absolute;
+        color: black;
+        font-size: 90px;
+        right: 10px;
+        top: -1px;
+        opacity: 0.3;
+      }
+
+      .day{
+        width: 40%;
+        height: 60px;
+        background-color: var(--tr2);
+        padding: 1rem;
+        font-size: 30px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .quote{
+        width: 100%;
+        // height: 70%;
+        margin-top: 10px;
+        font-size: 30px;
+        color: black;
+        padding: 5px 0.8rem;
+        font-weight: 900;
+      }
+      .author{
+        width: 45%;
+        height: 60px;
+        font-size: 25px;
+        font-weight: 100;
+        text-align: end;
+        padding: 0.7rem;
+        position: relative;
+        right: -55%;
+        border-radius: 20px;
+        color: white;
+        background-color: var(--tr2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+      }
+    }
+  }
+  .pomodoro-timer-fullpage{
+    height: 100vh;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: transparent;
+    background-image: url(https://i.pinimg.com/1200x/ab/71/08/ab7108b1b06dbaf43a73a1882da46ead.jpg);
+    background-size: cover;
+    background-position: center;
+    h1{
+      text-transform: capitalize;
+      font-size: 50px;
+      color:white;
+    }
+    h4{
+      font-size: 60px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color:white;
+      text-transform: capitalize;
+      background-color: rgba(255, 255, 255, 0);
+      font-weight: 100;
+      padding: 10px;
+      backdrop-filter: blur(30px);
+      border-radius: 20px;
+      border: 3px solid gray;
+    }
+    .timer-container{
+      @include display(center, center,column , 10px);
+      @include size(400px, 400px);
+      border-radius: 30px;
+      // background-color: red;
+      position: relative;
+      top: 15%;
+      left: 50%;
+      transform: translate(-50%,-10%);
+
+      .timeElem{
+        font-size: 100px;
+        color:white;
+      }
+      .time-buttons{
+        padding: 0.5rem;
+        font-size: 30px;
+        border-radius: 10px;
+        border: 2px solid rgb(255, 81, 0);
+        transition: all ease 0.2s;
+        color: white;
+        background-color: rgba(255, 215, 0,0.6);
+      }
+      .time-buttons:active{
+        scale: 0.97;
+      }
+    }
+  }
+}
