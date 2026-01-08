@@ -2,7 +2,11 @@
   --pri:#FCDEC0;
   --sec:#4e1f00;
   --tri1:#feba17;
-  --tr2:#74512d;
+  --tri2:#74512d;
+  --white:white;
+  --black:black;
+  --red:red;
+  --green:green;
 }
 
 @font-face{
@@ -58,10 +62,35 @@ main{
   width: 100%;
   min-height: 100vh;
   background-color: var(--sec);
-  color: wheat;
+  color: var(--white);
   font-family: light;
   @include display(center, flex-start,column ,1rem );
   overflow: hidden;
+  padding: 20px;
+
+  nav{
+    @include size(100%,30px );
+    background-color: var(--tri2);
+    padding: 30px 30px;
+    @include display(center,space-between ,row ,0px );
+    border-radius: 10px;
+
+    h1{
+      color: var(--white);
+    }
+    .theme{
+      background-color: var(--white);
+      padding: 0.6rem 0.8rem;
+      font-size: 18px;
+      border-radius: 10px;
+      color: var(--black);
+      font-weight: 900;
+      transition: all ease 0.2s;
+    }
+    .theme:active{
+      scale: 0.98;
+    }
+  }
 
   .cards-section{
     min-height: 100vh;
@@ -73,7 +102,7 @@ main{
       @include size(100%,300px );
       border-radius: 30px;
       padding: 10px 2rem;
-      color: white;
+      color: var(--white);
       background-image: url('https://images.unsplash.com/photo-1683041132892-0fe990b3afc3?q=80&w=1291&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
       background-size: cover;
       background-position: center bottom;
@@ -108,7 +137,7 @@ main{
             font-size: 40px;
             outline: none;
             background-color: transparent;
-            color: white;
+            color: var(--white);
             border: none;
           }
         }
@@ -166,13 +195,13 @@ main{
     .btn{
       position: absolute;
       right: 4%;
-      background-color: red;
+      background-color: var(--red);
       border: none;
       font-size: 25px;
       padding: 10px 15px;
       top: 2rem;
       border-radius: 10px;
-      color: white;
+      color: var(--white);
       transition: all ease 0.2s;
     }
     .btn:active{
@@ -196,7 +225,7 @@ main{
 
       .addTask{
         @include size(33%, 100%);
-        background-color: var(--tr2);
+        background-color: var(--tri2);
         border-radius: 15px;
 
         form{
@@ -234,7 +263,7 @@ main{
       }
       .allTask{
         @include size(65%,100% );
-        background-color:var(--tr2);
+        background-color:var(--tri2);
         border-radius: 15px;
         padding: 10px;
         overflow: auto;
@@ -243,7 +272,7 @@ main{
         .task{
           @include display(flex-start,space-between ,row ,10px );
           background-color: var(--pri);
-          color: #4e1f00;
+          color:var(--sec);
           padding: 15px;
           border-radius: 10px;
           width: 100%;
@@ -253,7 +282,7 @@ main{
             @include display(center,flex-start ,row ,1px );
 
             span{
-              background-color: red;
+              background-color: var(--red);
               padding: 3px;
               border-radius: 5px;
               font-size: 10px;
@@ -267,13 +296,9 @@ main{
             }
           }
           .task-done{
-            @include task-buttons(green);
+            @include task-buttons(var(--green));
             transition: all ease 0.2s;
             white-space: nowrap;
-          }
-          .task-delete{
-            @include task-buttons(red);
-            transition: all ease 0.2s;
           }
           .task-done:active,
           .task-delete:active{
@@ -294,7 +319,7 @@ main{
     width: 100%;
     h2{
       font-size: 50px;
-      color:white;
+      color:var(--white);
     }
 
     
@@ -302,7 +327,7 @@ main{
       border: 2px solid var(--tri1);
       margin-top: 30px;
       @include size(100%,80% );
-      background-color: var(--tr2);
+      background-color: var(--tri2);
       padding: 1rem;
       border-radius: 10px;
       @include display(flex-start,flex-start,row ,10px );
@@ -345,7 +370,7 @@ main{
     h1{
       text-transform: capitalize;
       font-size: 50px;
-      color:white;
+      color:var(--white);
     }
     .motivational-quote-container{
       position: relative;
@@ -356,13 +381,13 @@ main{
       background-color: var(--tri1);
       border-radius: 30px;
       overflow: hidden;
-      border: 5px solid var(--tr2);
+      border: 5px solid var(--tri2);
       box-shadow: 0 0 700px var(--tri1);
       position: relative;
 
       i{
         position: absolute;
-        color: black;
+        color: var(--black);
         font-size: 90px;
         right: 10px;
         top: -1px;
@@ -372,7 +397,7 @@ main{
       .day{
         width: 40%;
         height: 60px;
-        background-color: var(--tr2);
+        background-color: var(--tri2);
         padding: 1rem;
         font-size: 30px;
         border-radius: 20px;
@@ -384,7 +409,7 @@ main{
         // height: 70%;
         margin-top: 10px;
         font-size: 30px;
-        color: black;
+        color: var(--black);
         padding: 5px 0.8rem;
         font-weight: 900;
       }
@@ -398,8 +423,8 @@ main{
         position: relative;
         right: -55%;
         border-radius: 20px;
-        color: white;
-        background-color: var(--tr2);
+        color: var(--white);
+        background-color: var(--tri2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -418,14 +443,14 @@ main{
     h1{
       text-transform: capitalize;
       font-size: 50px;
-      color:white;
+      color:var(--white);
     }
     h4{
       font-size: 60px;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      color:white;
+      color:var(--white);
       text-transform: capitalize;
       background-color: rgba(255, 255, 255, 0);
       font-weight: 100;
@@ -446,7 +471,7 @@ main{
 
       .timeElem{
         font-size: 100px;
-        color:white;
+        color:var(--white);
       }
       .time-buttons{
         padding: 0.5rem;
@@ -454,7 +479,7 @@ main{
         border-radius: 10px;
         border: 2px solid rgb(255, 81, 0);
         transition: all ease 0.2s;
-        color: white;
+        color: var(--white);
         background-color: rgba(255, 215, 0,0.6);
       }
       .time-buttons:active{
