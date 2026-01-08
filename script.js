@@ -23,16 +23,20 @@ buttons.forEach((elem)=>{
 openFeatures()
 
 function dashBoradTime(){
+  let container=document.querySelector(".weather-time-container");
   let date=document.querySelector(".weather-time-container .upper-div .upper-div-content1 h3");
-let dayTime=document.querySelector(".weather-time-container .upper-div .upper-div-content1 h1");
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const shortMonths = [
+  let dayTime=document.querySelector(".weather-time-container .upper-div .upper-div-content1 h1");
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  
+  const imgArray=["https://images.unsplash.com/photo-1732239613951-0f10063b4589?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1683041132892-0fe990b3afc3?q=80&w=1291&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://plus.unsplash.com/premium_photo-1675826393511-7ce378893229?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"];
+
+  const shortMonths = [
   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-];
+  ];
 
-let unit="";
-const intervalId=setInterval(()=>{
+  let unit="";
+  const intervalId=setInterval(()=>{
   let newDate=new Date();
   if(newDate.getHours()>=12){
     unit="PM";
@@ -41,6 +45,16 @@ const intervalId=setInterval(()=>{
   }
   date.innerHTML=`${newDate.getDate()} ${shortMonths[newDate.getMonth()]}, ${newDate.getFullYear()}`;
   dayTime.innerHTML=`${days[newDate.getDay()]}, ${String(newDate.getHours()).padStart('2','0')}:${String(newDate.getMinutes()).padStart('2','0')}:${String(newDate.getSeconds()).padStart('2','0')} ${unit}`
+  
+  let url="";
+  if(newDate.getHours()>=7 && newDate.getHours()<=15){
+    url=imgArray[0];
+  }else if(newDate.getHours>=16 && newDate.getHours()<=18){
+    url=imgArray[1];
+  }else{
+    url=imgArray[2];
+  }
+  container.style.backgroundImage=`url(${url})`;
 },100)
 
 let city=document.querySelector(".weather-time-container .lower-div .lower-div-content1 input");
