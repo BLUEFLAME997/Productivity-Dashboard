@@ -271,3 +271,89 @@ resetButton.addEventListener("click",()=>{
 }
 
 pomodoroTimer();
+
+
+const themesCombo = [
+  // 0️⃣ Original Theme (Chocolate / Gold)
+  {
+    name: "Chocolate Gold (Original)",
+    pri: "#FCDEC0",
+    sec: "#4E1F00",
+    tri1: "#FEBA17",
+    tri2: "#74512D",
+    white: "#FFFFFF",
+    black: "#000000",
+    red: "#FF0000",
+    green: "#008000"
+  },
+
+  // 1️⃣ Warm Neutral (Premium / Calm)
+  {
+    name: "Warm Neutral",
+    pri: "#F7F5F2",
+    sec: "#2F2F2F",
+    tri1: "#C9A24D",
+    tri2: "#8B6F3D",
+    white: "#FFFFFF",
+    black: "#000000",
+    red: "#D64545",
+    green: "#2E7D32"
+  },
+
+  // 2️⃣ Slate Dark (Modern / Developer)
+{
+  name: "Midnight Graphite",
+  pri: "#0D1117",   // main background (GitHub dark style)
+  sec: "#346affff",   // primary text
+  tri1: "#3FB950",  // primary accent (success / action)
+  tri2: "#161B22",  // cards / panels
+  white: "#ffffffff",
+  black: "#000000",
+  red: "#F85149",   // error / danger
+  green: "#2EA043"  // success
+},
+
+  // 3️⃣ Soft Blue (Clean / Corporate)
+  {
+    name: "Soft Blue",
+    pri: "#F8FAFC",
+    sec: "#0F172A",
+    tri1: "#2563EB",
+    tri2: "#DBEAFE",
+    white: "#FFFFFF",
+    black: "#020617",
+    red: "#DC2626",
+    green: "#16A34A"
+  },
+
+  // 4️⃣ Earth Olive (Focused / Natural)
+  {
+    name: "Earth Olive",
+    pri: "#FAFAF7",
+    sec: "#2E3A2F",
+    tri1: "#6B8E23",
+    tri2: "#E6EBD9",
+    white: "#FFFFFF",
+    black: "#1A1A1A",
+    red: "#C24141",
+    green: "#3F7D3A"
+  }
+];
+
+
+let theme=document.querySelector("nav .theme");
+let rootElement = document.documentElement;
+
+let count=1;
+theme.addEventListener("click",()=>{
+  if(count>4) count=0;
+  rootElement.style.setProperty('--pri',themesCombo[count].pri);
+  rootElement.style.setProperty('--sec',themesCombo[count].sec);
+  rootElement.style.setProperty('--tri1',themesCombo[count].tri1);
+  rootElement.style.setProperty('--tri2',themesCombo[count].tri2);
+  rootElement.style.setProperty('--white',themesCombo[count].white);
+  rootElement.style.setProperty('--black',themesCombo[count].black);
+  rootElement.style.setProperty('--red',themesCombo[count].red);
+  rootElement.style.setProperty('--green',themesCombo[count].green);
+  count++;
+})
