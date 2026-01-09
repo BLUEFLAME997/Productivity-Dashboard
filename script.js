@@ -82,6 +82,9 @@ dashBoradTime();
 
 //To-Do-List: 
 
+let taskCount=0;
+let toDoListTracker=document.querySelector('.tracker-fullpage .tracker-elements-container .todo-list-tracker span');
+
 function toDoList(){
 let enterTask=document.querySelector('.addTask #task-enter');
 let textarea=document.querySelector('.addTask textarea');
@@ -132,10 +135,19 @@ allTask.addEventListener("click",(e)=>{
   if(e.target.classList.contains="task-done"){
     let index=e.target.id;
     taskArray.splice(index,1);
+    taskCount--;
     localStorage.setItem("taskArray",JSON.stringify(taskArray));
     taskDisplay();
   }
 })
+
+  setInterval(()=>{
+    taskArray.forEach((elem)=>{
+      taskCount++;
+    })
+    toDoListTracker.innerHTML=taskCount;
+    taskCount=0;
+  },1000)
 }
 
 toDoList();
@@ -188,6 +200,8 @@ getData();
 
 motivationFunction()
 
+let totalSection=0;
+
 function pomodoroTimer(){
   
 let startButton=document.querySelector("#start-timer-button");
@@ -233,6 +247,7 @@ function studyInterval(){
       timeContainer.innerHTML="05:00";
       checkPoint=true;
       h4.innerHTML="Break";
+      totalSection++;
       return;
     }
     totalSeconds--;
@@ -272,8 +287,8 @@ resetButton.addEventListener("click",()=>{
 
 pomodoroTimer();
 
-
-const themesCombo = [
+function themeChangeEffect(){
+  const themesCombo = [
   // 0️⃣ Original Theme (Chocolate / Gold)
   {
     name: "Chocolate Gold (Original)",
@@ -303,14 +318,14 @@ const themesCombo = [
   // 2️⃣ Slate Dark (Modern / Developer)
 {
   name: "Midnight Graphite",
-  pri: "#0D1117",   // main background (GitHub dark style)
-  sec: "#346affff",   // primary text
-  tri1: "#3FB950",  // primary accent (success / action)
-  tri2: "#161B22",  // cards / panels
+  pri: "#0D1117", 
+  sec: "#346affff", 
+  tri1: "#3FB950", 
+  tri2: "#161B22",
   white: "#ffffffff",
   black: "#000000",
-  red: "#F85149",   // error / danger
-  green: "#2EA043"  // success
+  red: "#F85149",
+  green: "#2EA043"
 },
 
   // 3️⃣ Soft Blue (Clean / Corporate)
@@ -357,3 +372,16 @@ theme.addEventListener("click",()=>{
   rootElement.style.setProperty('--green',themesCombo[count].green);
   count++;
 })
+
+}
+
+themeChangeEffect();
+
+function tracker(){
+  let pomodoroTracker=document.querySelector('.tracker-fullpage .tracker-elements-container .pomodoro-tracker span');
+
+setInterval(()=>{
+  pomodoroTracker.innerHTML=totalSection;
+},1000)
+}
+tracker();
