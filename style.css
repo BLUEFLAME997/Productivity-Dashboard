@@ -517,4 +517,33 @@ main .pomodoro-timer-fullpage .timer-container .time-buttons {
 }
 main .pomodoro-timer-fullpage .timer-container .time-buttons:active {
   scale: 0.97;
+}
+main .tracker-fullpage {
+  width: 100%;
+  height: 100vh;
+  padding: 1.5rem;
+}
+main .tracker-fullpage h1 {
+  font-size: 50px;
+}
+main .tracker-fullpage .tracker-elements-container {
+  width: 60%;
+  height: 300px;
+  position: relative;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+main .tracker-fullpage .tracker-elements-container .todo-list-tracker {
+  font-size: 50px;
+}
+main .tracker-fullpage .tracker-elements-container .pomodoro-tracker {
+  font-size: 50px;
 }/*# sourceMappingURL=style.css.map */
