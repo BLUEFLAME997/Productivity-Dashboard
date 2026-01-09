@@ -533,7 +533,6 @@ main .tracker-fullpage .tracker-elements-container {
   left: 50%;
   top: 30%;
   transform: translate(-50%, -50%);
-  background-color: red;
   display: flex;
   align-items: flex-start;
   justify-content: center;
